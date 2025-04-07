@@ -7,7 +7,7 @@ export const ReminderController = {
       const reminders = await ReminderService.getAllReminders(listType);
       res.status(200).json(reminders);
     } catch (error) {
-      next(error); // Pass error to errorHandlerMiddleware
+      next(error); 
     }
   },
 
@@ -17,7 +17,7 @@ export const ReminderController = {
       const reminder = await ReminderService.getReminderById(reminderId);
       res.status(200).json(reminder);
     } catch (error) {
-      next(error); // Pass error to errorHandlerMiddleware
+      next(error); 
     }
   },
 
@@ -26,7 +26,7 @@ export const ReminderController = {
       const newReminder = await ReminderService.createReminder(req.body);
       res.status(200).json(newReminder);
     } catch (error) {
-      next(error); // Pass error to errorHandlerMiddleware
+      next(error);
     }
   },
 
@@ -40,7 +40,7 @@ export const ReminderController = {
       );
       res.status(200).json(updatedReminder);
     } catch (error) {
-      next(error); // Pass error to errorHandlerMiddleware
+      next(error);
     }
   },
 
@@ -50,7 +50,7 @@ export const ReminderController = {
       const reminder = await ReminderService.deleteReminder(reminderId);
       res.status(200).json(reminder);
     } catch (error) {
-      next(error); // Pass error to errorHandlerMiddleware
+      next(error);
     }
   },
 };

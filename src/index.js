@@ -1,11 +1,13 @@
 import express from "express";
+import cors from "cors"
 import reminderRoutes from "./routes/reminderRoutes.js";
 import errorHandlerMiddleware from "./middlewares/errorHandlerMiddleware.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json()); 
+app.use(express.json());
+app.use(cors()); 
 app.use("/reminders", reminderRoutes);
 
 // Should be last
